@@ -27,9 +27,13 @@ function renderProjects() {
     }
 
     container.innerHTML = visibleProjects.map(function (project) {
+      var imageHtml = project.image 
+        ? `<img src="${project.image}" alt="${project.imageAlt || project.name}" class="project-image" />` 
+        : "";
+      
       return `
         <article class="project-card">
-          <div class="project-visual">${project.image}</div>
+          <div class="project-visual">${imageHtml}</div>
           <h3>${project.name}</h3>
           <p>${project.description}</p>
           <ul class="project-tags">

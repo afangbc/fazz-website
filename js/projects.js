@@ -1,9 +1,30 @@
 // ADD NEW PROJECTS HERE
+// 
+// IMAGE GUIDELINES:
+// - Image dimensions: 600x400px or any 3:2 aspect ratio (e.g., 900x600px)
+// - Supported formats: PNG, JPG, SVG, WEBP
+// - File size: Keep under 500KB for better loading
+// - Place images in the 'images/' folder
+// - Images will be automatically cropped to fit the 200px height with center focus
+//
+// EXAMPLE:
+// {
+//   name: "Your App Name",
+//   description: "A brief description...",
+//   image: "images/your-app-screenshot.png",
+//   imageAlt: "Your app interface showing main features",
+//   tags: ["Category", "Type", "Platform"],
+//   technologies: ["Tech1", "Tech2"],
+//   link: "https://your-app-link.com",
+//   github: "https://github.com/your-repo"
+// }
+
 const projects = [
   {
     name: "Daybook Planner",
     description: "A next-generation, all-in-one planning app meant for students. Easily track tasks and events through a seamless interface.",
-    image: "Daybook",
+    image: "images/daybook_screenshot.png",
+    imageAlt: "Daybook Planner logo",
     tags: ["Meant for Students", "Productivity", "Website"],
     technologies: ["Full Stack", "JavaScript"],
     link: "https://daybook-adv.lovable.app/",
@@ -12,7 +33,8 @@ const projects = [
   {
     name: "Community Map",
     description: "A directory that helps local residents discover nearby resources and support services.",
-    image: "Community Map",
+    image: "images/community-map.png",
+    imageAlt: "Community Map interface",
     tags: ["Community", "Accessibility", "Web App"],
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "#",
@@ -21,7 +43,8 @@ const projects = [
   {
     name: "BrightPath",
     description: "A simple planning platform that helps students navigate academic goals and milestones.",
-    image: "BrightPath",
+    image: "images/brightpath.png",
+    imageAlt: "BrightPath dashboard",
     tags: ["Education", "Planning", "Productivity"],
     technologies: ["Vue", "JavaScript"],
     link: "#",
