@@ -25,7 +25,7 @@ const projects = [
   {
     name: "Daybook Planner",
     description: "A next-generation, all-in-one planning app meant for students. Easily track tasks and events through a seamless interface.",
-    image: "images/daybook_screenshot.png",
+    image: "",
     imageAlt: "Daybook Planner logo",
     tags: ["Meant for Students", "Productivity", "Website"],
     technologies: ["Full Stack", "JavaScript"],
@@ -33,16 +33,16 @@ const projects = [
     github: "#"
   },
   {
-    name: "Community Map",
-    description: "A directory that helps local residents discover nearby resources and support services.",
+    name: "BytePrep",
+    description: "A website to prepare for AP Computer Science exams: AP CSP, AP CSA, and AP Cybersecurity.",
     tags: ["Community", "Accessibility", "Web App"],
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "#",
     github: "#"
   },
   {
-    name: "BrightPath",
-    description: "A simple planning platform that helps students navigate academic goals and milestones.",
+    name: "SAT Buddy",
+    description: "An SAT Prep tool that transcends previous learning. We use AI grading and mistake reinforcement to train students for the SAT.",
     tags: ["Education", "Planning", "Productivity"],
     technologies: ["Vue", "JavaScript"],
     link: "#",

@@ -9,23 +9,23 @@
 
 const founders = [
   {
-    name: "Founder Name",
-    role: "Co-Founder & President",
-    bio: "A sentence or two about this founder — their background, interests, or role at FAZZ.",
+    name: "Austin Fang",
+    role: "Founder",
+    bio: "Austin is a sophomore at Frisco High School.",
     image: "",
     imageAlt: ""
   },
   {
-    name: "Founder Name",
-    role: "Co-Founder & Vice President",
-    bio: "A sentence or two about this founder — their background, interests, or role at FAZZ.",
+    name: "Tiger Zhao",
+    role: "Founder",
+    bio: "Tiger is a junior at Greenhill High School.",
     image: "",
     imageAlt: ""
   },
   {
-    name: "Founder Name",
-    role: "Co-Founder & Treasurer",
-    bio: "A sentence or two about this founder — their background, interests, or role at FAZZ.",
+    name: "Zachary Chau",
+    role: "Founder",
+    bio: "Zachary is a junior at Reedy High School.",
     image: "",
     imageAlt: ""
   }
