@@ -1,28 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Lumina</title>
+    <title>FAZZ</title>
     <meta
       name="description"
-      content="Lumina is a student-led nonprofit building technology that helps people and communities through meaningful projects."
+      content="FAZZ (Future Advancements in Zero Barrier Zone) is a student-led nonprofit building technology solutions that improve students' lives, from planning tools to accessible learning resources."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/config.js"></script>
     <script defer src="js/projects.js"></script>
+    <script defer src="js/stats.js"></script>
     <script defer src="js/script.js"></script>
   </head>
   <body>
     <header class="page-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html"><span class="brand-mark">✦</span> Lumina</a>
+        <a class="brand" href="index.html"><span class="brand-mark">✦</span>Project FAZZ</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">
           <span class="toggle-line"></span>
           <span class="toggle-line"></span>
@@ -40,48 +41,74 @@
 
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Engineering Solutions for the Future.</p>
-          <h1>We are Project Lumina.</h1>
+          <p class="eyebrow">Technology built for student life</p>
+          <h1>We build technology that improves <span class="gradient-text">students' lives</span>.</h1>
           <p class="hero-text">Illuminating possibilities through technology.</p>
           <p class="hero-description">
-            We are a group of Texas-based student developers who build applications and systems to improve daily life.
+            We're a group of Texas-based student developers who design apps and tools that make everyday student life — planning, learning, and staying organized — a little easier.
           </p>
           <div class="hero-actions">
             <a href="projects.html" class="btn btn-primary">Explore Projects</a>
-            <a href="join.html" class="btn btn-secondary">Join Lumina</a>
+            <a href="join.html" class="btn btn-secondary">Join us</a>
           </div>
         </div>
 
         <div class="hero-visual-card">
-          <img src="images/hero-illustration.svg" alt="Illustration of a glowing light and digital tools" />
+          <div class="app-mock">
+            <div class="app-mock-header">
+              <div class="app-mock-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="app-mock-badge">Today's plan</span>
+            </div>
+            <div class="app-mock-progress"><span></span></div>
+            <div class="app-mock-task">
+              <span class="app-mock-check done">✓</span>
+              <span class="app-mock-task-text"><strong class="done-text">Finish lab report</strong><span>Chemistry · Due 9am</span></span>
+            </div>
+            <div class="app-mock-task">
+              <span class="app-mock-check done">✓</span>
+              <span class="app-mock-task-text"><strong class="done-text">Review flashcards</strong><span>AP Bio · 20 min</span></span>
+            </div>
+            <div class="app-mock-task">
+              <span class="app-mock-check pending">•</span>
+              <span class="app-mock-task-text"><strong>Study group @ 4pm</strong><span>Calculus · Library</span></span>
+            </div>
+          </div>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="section container">
+      <section class="section container" data-animate>
+        <div class="stat-grid" data-stats-grid></div>
+      </section>
+
+      <section class="section container" data-animate>
         <div class="section-heading">
           <p class="eyebrow">Our mission</p>
-          <h2>We empower students to use technology for good by building accessible tools and solving real-world problems.</h2>
+          <h2>Our mission is to create technology solutions that improve students' lives.</h2>
         </div>
         <div class="feature-grid">
           <article class="card">
             <h3>Who we are</h3>
-            <p>Lumina is a community of student developers who believe technology can create meaningful change when it is built with care.</p>
+            <p>FAZZ is a community of student developers who believe technology can create meaningful change when it is built with care.</p>
           </article>
           <article class="card">
             <h3>What we build</h3>
-            <p>We create practical apps, websites, and digital tools that help schools, communities, and everyday people.</p>
+            <p>We create practical apps and tools that help students plan, learn, and manage the everyday challenges of student life.</p>
           </article>
           <article class="card">
             <h3>Why it matters</h3>
-            <p>Every project is shaped by real needs, thoughtful collaboration, and a commitment to positive impact.</p>
+            <p>Every project is shaped by real student needs, thoughtful collaboration, and a commitment to positive impact.</p>
           </article>
         </div>
       </section>
 
       <section class="section section-alt">
-        <div class="container">
+        <div class="container" data-animate>
           <div class="section-heading">
             <p class="eyebrow">Highlighted projects</p>
             <h2>Our work centers on useful technology, clear impact, and student collaboration.</h2>
@@ -90,12 +117,12 @@
         </div>
       </section>
 
-      <section class="section container">
+      <section class="section container" data-animate>
         <div class="split-grid">
           <div>
-            <p class="eyebrow">Lumina Learn</p>
+            <p class="eyebrow">FAZZ Learn</p>
             <h2>Our future education initiative will help more students explore design, coding, and technology with confidence.</h2>
-            <p>Lumina Learn is an upcoming space for workshops, hands-on learning, and beginner-friendly resources that make technology feel approachable.</p>
+            <p>FAZZ Learn is an upcoming space for workshops, hands-on learning, and beginner-friendly resources that make technology feel approachable.</p>
           </div>
           <div class="card">
             <h3>Coming soon</h3>
@@ -109,14 +136,14 @@
         </div>
       </section>
 
-      <section class="section section-cta container">
+      <section class="section section-cta container" data-animate>
         <div class="callout">
           <div>
             <p class="eyebrow">Join the community</p>
             <h2>Students who want to build useful technology are welcome here.</h2>
           </div>
           <div class="callout-actions">
-            <a href="join.html" class="btn btn-primary">Apply to Lumina</a>
+            <a href="join.html" class="btn btn-primary">Apply to FAZZ</a>
             <a href="projects.html" class="btn btn-secondary">See our projects</a>
           </div>
         </div>
@@ -126,8 +153,8 @@
     <footer class="footer">
       <div class="container footer-inner">
         <div>
-          <p class="footer-brand">Lumina</p>
-          <p>Technology for good, built by students who want to make a meaningful difference.</p>
+          <p class="footer-brand">FAZZ</p>
+          <p>Technology solutions that improve students' lives, built by students who want to make a meaningful difference.</p>
         </div>
         <div class="footer-links">
           <a href="about.html">About</a>
