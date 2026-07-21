@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   renderProjects();
   renderFounders();
+  renderEvents();
   renderStats();
   setJoinLink();
   initScrollReveal();
@@ -66,12 +67,17 @@ function renderFounders() {
   var containers = document.querySelectorAll("[data-founders-grid]");
 
   containers.forEach(function (container) {
-    if (!founders.length) {
-      container.innerHTML = "<p>No founders yet. Add one to the data file.</p>";
+    var category = container.getAttribute("data-founders-grid");
+    var visibleFounders = category
+      ? founders.filter(function (founder) { return founder.category === category; })
+      : founders;
+
+    if (!visibleFounders.length) {
+      container.innerHTML = "<p>No team members yet. Add one to the data file.</p>";
       return;
     }
 
-    container.innerHTML = founders.map(function (founder, index) {
+    container.innerHTML = visibleFounders.map(function (founder, index) {
       var avatarHtml = founder.image
         ? `<img src="${founder.image}" alt="${founder.imageAlt || founder.name}" />`
         : founder.name.charAt(0).toUpperCase();
@@ -83,6 +89,47 @@ function renderFounders() {
           <h3>${founder.name}</h3>
           <span class="founder-role">${founder.role}</span>
           <p>${founder.bio}</p>
+        </article>
+      `;
+    }).join("");
+  });
+}
+
+function renderEvents() {
+  var containers = document.querySelectorAll("[data-events-grid]");
+  var eventsByAudience = {
+    students: typeof studentEvents !== "undefined" ? studentEvents : [],
+    elderly: typeof elderlyEvents !== "undefined" ? elderlyEvents : []
+  };
+
+  containers.forEach(function (container) {
+    var audience = container.getAttribute("data-events-grid");
+    var events = eventsByAudience[audience] || [];
+
+    if (!events.length) {
+      container.innerHTML = "<p>No events scheduled yet. Add one to the data file.</p>";
+      return;
+    }
+
+    container.innerHTML = events.map(function (event, index) {
+      var visualHtml = event.image
+        ? `<img src="${event.image}" alt="${event.imageAlt || event.title}" class="project-image" />`
+        : event.title.charAt(0).toUpperCase();
+      var visualStyle = event.image ? "" : ` style="background: ${TILE_GRADIENTS[index % TILE_GRADIENTS.length]}"`;
+      var linkHtml = event.link
+        ? `<div class="project-links"><a href="${event.link}" target="_blank" rel="noreferrer">Learn more</a></div>`
+        : "";
+
+      return `
+        <article class="project-card event-card">
+          <div class="project-visual"${visualStyle}>${visualHtml}</div>
+          <h3>${event.title}</h3>
+          <ul class="event-meta">
+            <li>${event.date}</li>
+            <li>${event.location}</li>
+          </ul>
+          <p>${event.description}</p>
+          ${linkHtml}
         </article>
       `;
     }).join("");

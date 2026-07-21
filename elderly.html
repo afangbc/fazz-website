@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAZZ Learn | FAZZ</title>
+    <title>Elderly | FAZZ</title>
     <meta
       name="description"
-      content="FAZZ Learn is an upcoming education initiative focused on helping students explore programming and technology."
+      content="FAZZ builds accessible apps and hosts community outreach events, like tech help drop-ins and online safety workshops, to support elderly community members."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +16,8 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/config.js"></script>
+    <script defer src="js/projects.js"></script>
+    <script defer src="js/events.js"></script>
     <script defer src="js/script.js"></script>
   </head>
   <body>
@@ -31,8 +33,8 @@
         <nav id="site-navigation" class="site-nav">
           <a href="index.html" class="nav-link">Home</a>
           <a href="about.html" class="nav-link">About</a>
-          <a href="projects.html" class="nav-link">Projects</a>
-          <a href="learn.html" class="nav-link active">Learn</a>
+          <a href="students.html" class="nav-link">Students</a>
+          <a href="elderly.html" class="nav-link active">Elderly</a>
           <a href="join.html" class="nav-link">Join</a>
         </nav>
       </div>
@@ -41,30 +43,37 @@
     <main>
       <section class="section section-subpage-hero container" data-animate>
         <div class="subpage-content">
-          <p class="eyebrow">FAZZ Learn</p>
-          <h1>Coming Soon</h1>
-          <p>FAZZ Learn is our upcoming educational initiative focused on helping students explore programming, software development, and technology through workshops, resources, and hands-on projects.</p>
+          <p class="eyebrow">For Elderly Community Members</p>
+          <h1>Accessible apps, and a community that helps in person.</h1>
+          <p>Explore the tools we've built with accessibility in mind, then see how you can meet the FAZZ team at an upcoming outreach event.</p>
         </div>
       </section>
 
       <section class="section container" data-animate>
-        <div class="feature-grid">
-          <article class="card">
-            <h3>Workshops</h3>
-            <p>Hands-on sessions that introduce students to coding, design, and project-based learning.</p>
-          </article>
-          <article class="card">
-            <h3>Courses</h3>
-            <p>Beginner-friendly learning paths that guide students through practical technical skills.</p>
-          </article>
-          <article class="card">
-            <h3>Resources</h3>
-            <p>Helpful materials, tutorials, and references that support continued growth and exploration.</p>
-          </article>
-          <article class="card">
-            <h3>Community events</h3>
-            <p>Opportunities for students to connect, share ideas, and collaborate on meaningful projects.</p>
-          </article>
+        <div class="section-heading">
+          <p class="eyebrow">Apps for the community</p>
+          <h2>Browse the tools and experiences FAZZ has built.</h2>
+        </div>
+        <div class="project-grid" data-project-grid></div>
+      </section>
+
+      <section class="section section-alt container" data-animate>
+        <div class="section-heading">
+          <p class="eyebrow">Community outreach</p>
+          <h2>Upcoming events where you can meet us and get hands-on help with technology.</h2>
+        </div>
+        <div class="project-grid event-grid" data-events-grid="elderly"></div>
+      </section>
+
+      <section class="section section-cta container" data-animate>
+        <div class="callout">
+          <div>
+            <p class="eyebrow">Get in touch</p>
+            <h2>Have a question or want to request an event near you?</h2>
+          </div>
+          <div class="callout-actions">
+            <a href="join.html" class="btn btn-primary">Contact FAZZ</a>
+          </div>
         </div>
       </section>
     </main>
@@ -73,12 +82,12 @@
       <div class="container footer-inner">
         <div>
           <p class="footer-brand">FAZZ</p>
-          <p>Technology solutions that improve students' lives, built by students who want to make a meaningful difference.</p>
+          <p>Technology solutions that improve the lives of our community — students and elderly alike — built by students who want to make a meaningful difference.</p>
         </div>
         <div class="footer-links">
           <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="learn.html">Learn</a>
+          <a href="students.html">Students</a>
+          <a href="elderly.html">Elderly</a>
           <a href="join.html">Join</a>
         </div>
       </div>

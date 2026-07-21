@@ -259,7 +259,6 @@ p {
 .project-card li,
 .detail-list,
 .tool-template-card p,
-.learn-steps p,
 .contact-panel p,
 .form-status {
   color: var(--muted);
@@ -644,6 +643,31 @@ p {
   object-position: center;
 }
 
+.event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--primary-dark);
+}
+
+.founder-group {
+  margin-bottom: 3rem;
+}
+
+.founder-group:last-child {
+  margin-bottom: 0;
+}
+
+.founder-group-heading {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
 .project-tags,
 .tech-list {
   display: flex;
@@ -786,38 +810,6 @@ p {
 
 .footer-links a:hover {
   color: var(--text);
-}
-
-/* Learn page */
-
-.learn-steps {
-  display: grid;
-  gap: 1rem;
-}
-
-.learn-steps div {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-  align-items: start;
-  padding: 1.4rem;
-  border-radius: var(--radius-sm);
-  background: var(--surface-glass);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-}
-
-.learn-steps strong {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: var(--accent-gradient);
-  border-radius: 14px;
-  color: #fff;
-  font-size: 1rem;
-  font-family: "Manrope", sans-serif;
 }
 
 /* Form */

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | FAZZ</title>
+    <title>Students | FAZZ</title>
     <meta
       name="description"
-      content="Explore FAZZ projects: student-built apps and tools designed to improve students' lives."
+      content="FAZZ builds apps for students and hosts community outreach events like workshops and meetups to help students grow with technology."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script defer src="js/config.js"></script>
     <script defer src="js/projects.js"></script>
+    <script defer src="js/events.js"></script>
     <script defer src="js/script.js"></script>
   </head>
   <body>
@@ -32,8 +33,8 @@
         <nav id="site-navigation" class="site-nav">
           <a href="index.html" class="nav-link">Home</a>
           <a href="about.html" class="nav-link">About</a>
-          <a href="projects.html" class="nav-link active">Projects</a>
-          <a href="learn.html" class="nav-link">Learn</a>
+          <a href="students.html" class="nav-link active">Students</a>
+          <a href="elderly.html" class="nav-link">Elderly</a>
           <a href="join.html" class="nav-link">Join</a>
         </nav>
       </div>
@@ -42,18 +43,38 @@
     <main>
       <section class="section section-subpage-hero container" data-animate>
         <div class="subpage-content">
-          <p class="eyebrow">Projects</p>
-          <h1>Our projects are built to improve <span class="gradient-text">students' lives</span> and support student learning.</h1>
-          <p>See a brief description of the projects our developers have created.</p>
+          <p class="eyebrow">For Students</p>
+          <h1>Apps built for students, and a community that shows up in person.</h1>
+          <p>Explore the tools we've built for student life, then see how you can meet the FAZZ team at an upcoming outreach event.</p>
         </div>
       </section>
 
       <section class="section container" data-animate>
         <div class="section-heading">
-          <p class="eyebrow">Featured work</p>
-          <h2>Browse the tools and experiences FAZZ has built so far.</h2>
+          <p class="eyebrow">Apps for students</p>
+          <h2>Browse the tools and experiences FAZZ has built for students.</h2>
         </div>
         <div class="project-grid" data-project-grid></div>
+      </section>
+
+      <section class="section section-alt container" data-animate>
+        <div class="section-heading">
+          <p class="eyebrow">Community outreach</p>
+          <h2>Upcoming events where students can meet us and get hands-on with technology.</h2>
+        </div>
+        <div class="project-grid event-grid" data-events-grid="students"></div>
+      </section>
+
+      <section class="section section-cta container" data-animate>
+        <div class="callout">
+          <div>
+            <p class="eyebrow">Join the community</p>
+            <h2>Students who want to build useful technology are welcome here.</h2>
+          </div>
+          <div class="callout-actions">
+            <a href="join.html" class="btn btn-primary">Apply to FAZZ</a>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -61,12 +82,12 @@
       <div class="container footer-inner">
         <div>
           <p class="footer-brand">FAZZ</p>
-          <p>Technology solutions that improve students' lives, built by students who want to make a meaningful difference.</p>
+          <p>Technology solutions that improve the lives of our community — students and elderly alike — built by students who want to make a meaningful difference.</p>
         </div>
         <div class="footer-links">
           <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="learn.html">Learn</a>
+          <a href="students.html">Students</a>
+          <a href="elderly.html">Elderly</a>
           <a href="join.html">Join</a>
         </div>
       </div>
