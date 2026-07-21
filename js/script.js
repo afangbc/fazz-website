@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  renderBanner();
   renderProjects();
   renderFounders();
   renderEvents();
@@ -17,6 +18,43 @@ document.addEventListener("DOMContentLoaded", function () {
   setJoinLink();
   initScrollReveal();
 });
+
+var BANNER_DISMISS_KEY = "fazz-banner-dismissed";
+
+function renderBanner() {
+  var config = window.BANNER_CONFIG;
+  var container = document.getElementById("site-banner");
+  if (!container || !config || !config.enabled || !config.text) return;
+
+  if (config.dismissible && localStorage.getItem(BANNER_DISMISS_KEY) === config.text) {
+    return;
+  }
+
+  var linkHtml = config.linkUrl
+    ? `<a class="site-banner-link" href="${config.linkUrl}" target="_blank" rel="noreferrer">${config.linkText || "Learn more"}</a>`
+    : "";
+  var closeHtml = config.dismissible
+    ? `<button type="button" class="site-banner-close" aria-label="Dismiss banner">&times;</button>`
+    : "";
+
+  container.innerHTML = `
+    <div class="site-banner-inner container">
+      <p class="site-banner-text">${config.text}</p>
+      ${linkHtml}
+      ${closeHtml}
+    </div>
+  `;
+  container.classList.add("is-visible");
+
+  var closeBtn = container.querySelector(".site-banner-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function () {
+      container.classList.remove("is-visible");
+      container.innerHTML = "";
+      localStorage.setItem(BANNER_DISMISS_KEY, config.text);
+    });
+  }
+}
 
 var TILE_GRADIENTS = [
   "linear-gradient(135deg, #6d5bf7, #ec4899)",

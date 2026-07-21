@@ -84,6 +84,55 @@ textarea {
   border: 0;
 }
 
+/* Announcement banner */
+
+.site-banner {
+  display: none;
+}
+
+.site-banner.is-visible {
+  display: block;
+  background: var(--accent-gradient);
+  color: #fff;
+}
+
+.site-banner-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  padding: 0.75rem 2.75rem;
+  text-align: center;
+}
+
+.site-banner-text {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.site-banner-link {
+  font-weight: 700;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.site-banner-close {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
 /* Header / nav */
 
 .header-inner {

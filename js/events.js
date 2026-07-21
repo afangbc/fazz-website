@@ -19,42 +19,26 @@
 
 const studentEvents = [
   {
-    title: "Coding for Beginners Workshop",
-    date: "August 16, 2026",
-    location: "Frisco Public Library",
-    description: "A hands-on introduction to programming for middle and high school students, no experience required.",
+    title: "BPA and DECA workshop",
+    date: "August 1, 2026 at 2-3 PM",
+    location: "Frisco Public Library Meeting Room 1, or on Zoom",
+    description: "ICDC and BPA NLC finalists and winners explain their tactics to place high at International business competitions! Sign up today",
     image: "",
     imageAlt: "",
-    link: ""
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSepmuspYK9iAg60k5g135sGK8n-RJ2ywWvntxYmGgeUTmS3aw/viewform?usp=publish-editor"
   },
-  {
-    title: "Student Tech Meetup",
-    date: "September 20, 2026",
-    location: "Frisco Community Center",
-    description: "Students connect with FAZZ developers, try out our apps, and share ideas for future projects.",
-    image: "",
-    imageAlt: "",
-    link: ""
-  }
+  
 ];
 
 const elderlyEvents = [
   {
-    title: "Tech Help Drop-In",
-    date: "August 23, 2026",
+    title: "AI Real vs Fake: How to protect your privacy in today's digitalized world",
+    date: "TBD",
     location: "Frisco Senior Center",
-    description: "A friendly, no-pressure session where volunteers help seniors get comfortable with smartphones, apps, and the internet.",
+    description: "TBD... stick around soon to find out!",
     image: "",
     imageAlt: "",
     link: ""
   },
-  {
-    title: "Staying Safe Online Workshop",
-    date: "September 13, 2026",
-    location: "Frisco Public Library",
-    description: "A workshop covering the basics of avoiding scams, protecting personal information, and using technology safely.",
-    image: "",
-    imageAlt: "",
-    link: ""
-  }
+  
 ];
