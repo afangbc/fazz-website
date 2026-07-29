@@ -34,7 +34,34 @@ const founders = [
     bio: "Zachary is a junior at Reedy High School.",
     image: "",
     imageAlt: ""
-  }
+  },
+
+  {
+    name: "Justin Thiodore",
+    role: "Head of Technology",
+    category: "developer",
+    bio: "Justin is a sophomore at Reedy High School.",
+    image: "",
+    imageAlt: ""
+  },
+
+  {
+    name: "Ethan Leung",
+    role: "Head of Community Outreach",
+    category: "developer",
+    bio: "Ethan is a sophomore at Reedy High School.",
+    image: "",
+    imageAlt: ""
+  },
+
+  {
+    name: "Krishang Babu",
+    role: "Lead App Developer",
+    category: "developer",
+    bio: "Krishang is a sophomore at Frisco High School.",
+    image: "",
+    imageAlt: ""
+  },
 
   // Example developer entry — copy this block to add a developer:
   // {
