@@ -53,6 +53,15 @@ const founders = [
     image: "",
     imageAlt: ""
   },
+  
+  {
+    name: "Alex Shi",
+    role: "Head of Community Outreach",
+    category: "developer",
+    bio: "Alex is a sophomore at Liberty High School.",
+    image: "",
+    imageAlt: ""
+  },
 
   {
     name: "Krishang Babu",
@@ -62,6 +71,8 @@ const founders = [
     image: "",
     imageAlt: ""
   },
+
+  
 
   // Example developer entry — copy this block to add a developer:
   // {
