@@ -8,6 +8,7 @@
       name="description"
       content="FAZZ builds accessible apps and hosts community outreach events, like tech help drop-ins and online safety workshops, to support elderly community members."
     />
+    <meta name="theme-color" content="#6d5bf7" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,13 +23,17 @@
   </head>
   <body>
     <div id="site-banner" class="site-banner"></div>
-    <header class="page-header page-header-subpage">
+
+    <header class="site-header">
+      <div class="nav-scrim" data-nav-scrim></div>
       <div class="container header-inner">
-        <a class="brand" href="index.html"><span class="brand-mark">✦</span> FAZZ</a>
+        <a class="brand" href="index.html"><span class="brand-mark">✦</span>FAZZ</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">
-          <span class="toggle-line"></span>
-          <span class="toggle-line"></span>
-          <span class="toggle-line"></span>
+          <span class="toggle-lines">
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+          </span>
           <span class="visually-hidden">Open navigation</span>
         </button>
         <nav id="site-navigation" class="site-nav">
@@ -36,44 +41,63 @@
           <a href="about.html" class="nav-link">About</a>
           <a href="students.html" class="nav-link">Students</a>
           <a href="elderly.html" class="nav-link active">Elderly</a>
-          <a href="join.html" class="nav-link">Join</a>
+          <span class="nav-cta"><a href="join.html" class="btn btn-primary btn-sm">Join us</a></span>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="section section-subpage-hero container" data-animate>
-        <div class="subpage-content">
-          <p class="eyebrow">For Elderly Community Members</p>
-          <h1>Accessible apps, and a community that helps in person.</h1>
-          <p>Explore the tools we've built with accessibility in mind, then see how you can meet the FAZZ team at an upcoming outreach event.</p>
-        </div>
+      <section class="hero-sub hero-sub-wide container" data-animate>
+        <p class="eyebrow">For elderly community members</p>
+        <h1>Technology help, from neighbors who have time.</h1>
+        <p class="lead">Accessible tools built with clarity in mind — and in-person sessions where we sit down and help.</p>
+        <ul class="hero-meta">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+            Free of charge
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
+            Online safety guidance
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+            Local to Frisco
+          </li>
+        </ul>
       </section>
 
       <section class="section container" data-animate>
-        <div class="section-heading">
-          <p class="eyebrow">Apps for the community</p>
-          <h2>Browse the tools and experiences FAZZ has built.</h2>
+        <div class="section-head">
+          <p class="eyebrow">Apps</p>
+          <h2>Tools built to be easy.</h2>
         </div>
         <div class="project-grid" data-project-grid></div>
       </section>
 
-      <section class="section section-alt container" data-animate>
-        <div class="section-heading">
-          <p class="eyebrow">Community outreach</p>
-          <h2>Upcoming events where you can meet us and get hands-on help with technology.</h2>
+      <section class="section container" data-animate>
+        <div class="panel">
+          <div class="section-head">
+            <p class="eyebrow">Community outreach</p>
+            <h2>Sessions near you.</h2>
+            <p class="lead">Bring a phone, a laptop, or just a question. There's nothing to sign up for.</p>
+          </div>
+          <div class="project-grid event-grid" data-events-grid="elderly"></div>
         </div>
-        <div class="project-grid event-grid" data-events-grid="elderly"></div>
       </section>
 
-      <section class="section section-cta container" data-animate>
+      <section class="section container" data-animate>
         <div class="callout">
           <div>
             <p class="eyebrow">Get in touch</p>
-            <h2>Have a question or want to request an event near you?</h2>
+            <h2>Want an event near you?</h2>
+            <p>Tell us where, and we'll do our best to be there.</p>
           </div>
           <div class="callout-actions">
-            <a href="join.html" class="btn btn-primary">Contact FAZZ</a>
+            <a href="mailto:project.Lumina.edu@gmail.com" class="btn btn-primary">
+              Contact FAZZ
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
           </div>
         </div>
       </section>
@@ -81,15 +105,28 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <div>
-          <p class="footer-brand">FAZZ</p>
-          <p>Technology solutions that improve the lives of our community — students and elderly alike — built by students who want to make a meaningful difference.</p>
+        <div class="footer-brand-col">
+          <p class="footer-brand"><span class="brand-mark">✦</span>FAZZ</p>
+          <p>Future Advancements in Zero Barrier Zone — student-built technology for the people around us.</p>
         </div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="students.html">Students</a>
-          <a href="elderly.html">Elderly</a>
-          <a href="join.html">Join</a>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="students.html">Students</a></li>
+            <li><a href="elderly.html">Elderly</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get involved</h4>
+          <ul>
+            <li><a href="join.html">Apply to FAZZ</a></li>
+            <li><a href="mailto:project.Lumina.edu@gmail.com">Email us</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-year>2026</span> FAZZ. A student-led nonprofit.</span>
+          <span>Frisco, Texas</span>
         </div>
       </div>
     </footer>

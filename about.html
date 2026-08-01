@@ -8,6 +8,7 @@
       name="description"
       content="FAZZ (Future Advancements in Zero Barrier Zone) is a student-led nonprofit building technology solutions that improve the lives of our community, students and elderly alike, through meaningful, practical projects."
     />
+    <meta name="theme-color" content="#6d5bf7" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,13 +22,17 @@
   </head>
   <body>
     <div id="site-banner" class="site-banner"></div>
-    <header class="page-header page-header-subpage">
+
+    <header class="site-header">
+      <div class="nav-scrim" data-nav-scrim></div>
       <div class="container header-inner">
-        <a class="brand" href="index.html"><span class="brand-mark">✦</span> FAZZ</a>
+        <a class="brand" href="index.html"><span class="brand-mark">✦</span>FAZZ</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">
-          <span class="toggle-line"></span>
-          <span class="toggle-line"></span>
-          <span class="toggle-line"></span>
+          <span class="toggle-lines">
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+          </span>
           <span class="visually-hidden">Open navigation</span>
         </button>
         <nav id="site-navigation" class="site-nav">
@@ -35,66 +40,109 @@
           <a href="about.html" class="nav-link active">About</a>
           <a href="students.html" class="nav-link">Students</a>
           <a href="elderly.html" class="nav-link">Elderly</a>
-          <a href="join.html" class="nav-link">Join</a>
+          <span class="nav-cta"><a href="join.html" class="btn btn-primary btn-sm">Join us</a></span>
         </nav>
       </div>
     </header>
 
     <main>
-      <section class="section section-subpage-hero container" data-animate>
-        <div class="subpage-content">
-          <p class="eyebrow">About FAZZ</p>
-          <h1>We believe technology can illuminate possibilities and improve <span class="gradient-text">the lives of our community</span>.</h1>
-          <p>FAZZ (Future Advancements in Zero Barrier Zone) is a student-led nonprofit made up of developers who create practical technology solutions for students.</p>
+      <section class="hero-sub container" data-animate>
+        <p class="eyebrow">About FAZZ</p>
+        <h1>Technology should <span class="gradient-text">open doors</span>, not add barriers.</h1>
+        <p class="lead">Future Advancements in Zero Barrier Zone — a student-led nonprofit out of Frisco, Texas.</p>
+      </section>
+
+      <section class="section container" data-animate>
+        <div class="grid grid-3">
+          <article class="card">
+            <span class="icon-tile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="1" /></svg>
+            </span>
+            <h3>Mission</h3>
+            <p>Build accessible tools that make learning and everyday life easier.</p>
+          </article>
+
+          <article class="card">
+            <span class="icon-tile tile-cool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
+            </span>
+            <h3>Vision</h3>
+            <p>A community where good technology is available to everyone in it.</p>
+          </article>
+
+          <article class="card">
+            <span class="icon-tile tile-warm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /><path d="m9 12 2 2 4-4" /></svg>
+            </span>
+            <h3>Values</h3>
+            <p>Collaboration, accessibility, and shipping things people actually use.</p>
+          </article>
         </div>
       </section>
 
       <section class="section container" data-animate>
-        <div class="section-heading">
-          <p class="eyebrow">Who we are</p>
-          <h2>FAZZ is a community of student developers who build technology with purpose.</h2>
-        </div>
-        <div class="feature-grid">
-          <article class="card">
-            <h3>Our mission</h3>
-            <p>To create technology solutions that improve the lives of our community — students and elderly alike — by building accessible tools that support learning, organization, and everyday challenges people face.</p>
-          </article>
-          <article class="card">
-            <h3>Our vision</h3>
-            <p>A future where every student has access to thoughtful technology that supports how they learn, plan, and grow.</p>
-          </article>
-          <article class="card">
-            <h3>What we value</h3>
-            <p>We value collaboration, learning, accessibility, and building software that helps real students.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section-alt container" data-animate>
-        <div class="section-heading">
-          <p class="eyebrow">Our team</p>
-          <h2>Meet the people behind FAZZ.</h2>
-        </div>
-        <div class="founder-group">
-          <h3 class="founder-group-heading">Executive positions</h3>
-          <div class="founder-grid" data-founders-grid="executive"></div>
-        </div>
-        <div class="founder-group">
-          <h3 class="founder-group-heading">Developers</h3>
-          <div class="founder-grid" data-founders-grid="developer"></div>
+        <div class="panel">
+          <div class="section-head">
+            <p class="eyebrow">Our team</p>
+            <h2>The people behind FAZZ.</h2>
+          </div>
+          <div class="founder-group">
+            <h3 class="founder-group-heading">Executive</h3>
+            <div class="founder-grid" data-founders-grid="executive"></div>
+          </div>
+          <div class="founder-group">
+            <h3 class="founder-group-heading">Developers</h3>
+            <div class="founder-grid" data-founders-grid="developer"></div>
+          </div>
         </div>
       </section>
 
       <section class="section container" data-animate>
-        <div class="split-grid">
+        <div class="grid grid-2">
           <div>
             <p class="eyebrow">Our approach</p>
-            <h2>We focus on projects that are useful, thoughtful, and built for real student impact.</h2>
-            <p>FAZZ is not a personal portfolio or startup. It is a nonprofit community where students collaborate, learn, and build technology that improves the lives of students and elderly community members.</p>
+            <h2>Not a portfolio. Not a startup.</h2>
+            <p class="lead">FAZZ is a place where students learn by building things that get used — then hand them to the community for free.</p>
+            <ul class="steps" style="margin-top: 1.75rem">
+              <li class="step">
+                <div>
+                  <strong>Find a real need</strong>
+                  <span>We start with a problem someone actually has.</span>
+                </div>
+              </li>
+              <li class="step">
+                <div>
+                  <strong>Build it together</strong>
+                  <span>Students design, code, and test in small teams.</span>
+                </div>
+              </li>
+              <li class="step">
+                <div>
+                  <strong>Put it in their hands</strong>
+                  <span>Free to use, and supported at in-person events.</span>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="quote-card">
-            <p>"Technology can illuminate possibilities, reveal solutions, and empower students."</p>
-            <span>FAZZ philosophy</span>
+          <blockquote class="quote-card">
+            <p>Technology can illuminate possibilities, reveal solutions, and empower the people around us.</p>
+            <cite>FAZZ philosophy</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="section container" data-animate>
+        <div class="callout">
+          <div>
+            <p class="eyebrow">Join the community</p>
+            <h2>There's room for you here.</h2>
+            <p>Developers, designers, and organizers — all welcome.</p>
+          </div>
+          <div class="callout-actions">
+            <a href="join.html" class="btn btn-primary">
+              Apply to FAZZ
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
           </div>
         </div>
       </section>
@@ -102,15 +150,28 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <div>
-          <p class="footer-brand">FAZZ</p>
-          <p>Technology solutions that improve the lives of our community — students and elderly alike — built by students who want to make a meaningful difference.</p>
+        <div class="footer-brand-col">
+          <p class="footer-brand"><span class="brand-mark">✦</span>FAZZ</p>
+          <p>Future Advancements in Zero Barrier Zone — student-built technology for the people around us.</p>
         </div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="students.html">Students</a>
-          <a href="elderly.html">Elderly</a>
-          <a href="join.html">Join</a>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="students.html">Students</a></li>
+            <li><a href="elderly.html">Elderly</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get involved</h4>
+          <ul>
+            <li><a href="join.html">Apply to FAZZ</a></li>
+            <li><a href="mailto:project.Lumina.edu@gmail.com">Email us</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-year>2026</span> FAZZ. A student-led nonprofit.</span>
+          <span>Frisco, Texas</span>
         </div>
       </div>
     </footer>

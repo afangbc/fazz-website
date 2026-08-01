@@ -8,6 +8,7 @@
       name="description"
       content="FAZZ (Future Advancements in Zero Barrier Zone) is a student-led nonprofit building technology solutions that improve the lives of our community, students and elderly alike, from planning tools to accessible resources."
     />
+    <meta name="theme-color" content="#6d5bf7" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,13 +23,17 @@
   </head>
   <body>
     <div id="site-banner" class="site-banner"></div>
-    <header class="page-header">
+
+    <header class="site-header">
+      <div class="nav-scrim" data-nav-scrim></div>
       <div class="container header-inner">
-        <a class="brand" href="index.html"><span class="brand-mark">✦</span>Project FAZZ</a>
+        <a class="brand" href="index.html"><span class="brand-mark">✦</span>FAZZ</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">
-          <span class="toggle-line"></span>
-          <span class="toggle-line"></span>
-          <span class="toggle-line"></span>
+          <span class="toggle-lines">
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+          </span>
           <span class="visually-hidden">Open navigation</span>
         </button>
         <nav id="site-navigation" class="site-nav">
@@ -36,114 +41,200 @@
           <a href="about.html" class="nav-link">About</a>
           <a href="students.html" class="nav-link">Students</a>
           <a href="elderly.html" class="nav-link">Elderly</a>
-          <a href="join.html" class="nav-link">Join</a>
+          <span class="nav-cta"><a href="join.html" class="btn btn-primary btn-sm">Join us</a></span>
         </nav>
-      </div>
-
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Technology built for our community</p>
-          <h1>We build technology that improves <span class="gradient-text">the lives of community members</span>.</h1>
-          <p class="hero-text">Illuminating possibilities through technology.</p>
-          <p class="hero-description">
-            We're a group of Texas-based student developers who design apps and tools that make everyday life easier for our community — from planning and learning for students to staying connected and confident with technology for elderly neighbors.
-          </p>
-          <div class="hero-actions">
-            <a href="#highlighted-projects" class="btn btn-primary">Explore Projects</a>
-            <a href="join.html" class="btn btn-secondary">Join us</a>
-          </div>
-        </div>
-
-        <div class="hero-visual-card">
-          <div class="app-mock">
-            <div class="app-mock-header">
-              <div class="app-mock-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span class="app-mock-badge">Today's plan</span>
-            </div>
-            <div class="app-mock-progress"><span></span></div>
-            <div class="app-mock-task">
-              <span class="app-mock-check done">✓</span>
-              <span class="app-mock-task-text"><strong class="done-text">Finish lab report</strong><span>Chemistry · Due 9am</span></span>
-            </div>
-            <div class="app-mock-task">
-              <span class="app-mock-check done">✓</span>
-              <span class="app-mock-task-text"><strong class="done-text">Review flashcards</strong><span>AP Bio · 20 min</span></span>
-            </div>
-            <div class="app-mock-task">
-              <span class="app-mock-check pending">•</span>
-              <span class="app-mock-task-text"><strong>Study group @ 4pm</strong><span>Calculus · Library</span></span>
-            </div>
-          </div>
-        </div>
       </div>
     </header>
 
     <main>
-      <section class="section container" data-animate>
-        <div class="stat-grid" data-stats-grid></div>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Student-led nonprofit</p>
+            <h1>Technology that <span class="gradient-text">lifts up</span> our community.</h1>
+            <p class="lead">
+              We're Texas students who build apps for the people around us — classmates and elderly neighbors alike.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                Explore projects
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+              </a>
+              <a href="join.html" class="btn btn-secondary">Join the team</a>
+            </div>
+            <ul class="hero-meta">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                Always free
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+                Frisco, Texas
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /></svg>
+                Open to new members
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-visual">
+            <span class="float-chip float-chip-a">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z" /></svg>
+              Built by students
+            </span>
+            <div class="app-mock">
+              <div class="app-mock-header">
+                <div class="app-mock-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span class="app-mock-badge">Today's plan</span>
+              </div>
+              <div class="app-mock-progress"><span></span></div>
+              <div class="app-mock-task">
+                <span class="app-mock-check done">✓</span>
+                <span class="app-mock-task-text"><strong class="done-text">Finish lab report</strong><span>Chemistry · Due 9am</span></span>
+              </div>
+              <div class="app-mock-task">
+                <span class="app-mock-check done">✓</span>
+                <span class="app-mock-task-text"><strong class="done-text">Review flashcards</strong><span>AP Bio · 20 min</span></span>
+              </div>
+              <div class="app-mock-task">
+                <span class="app-mock-check pending">•</span>
+                <span class="app-mock-task-text"><strong>Study group @ 4pm</strong><span>Calculus · Library</span></span>
+              </div>
+            </div>
+            <span class="float-chip float-chip-b">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" /></svg>
+              Free forever
+            </span>
+          </div>
+        </div>
       </section>
 
+      <!-- Stats -->
+      <section class="section-sm container" data-animate>
+        <div class="stat-strip" data-stats-grid></div>
+      </section>
+
+      <!-- Mission -->
       <section class="section container" data-animate>
-        <div class="section-heading">
+        <div class="section-head">
           <p class="eyebrow">Our mission</p>
-          <h2>Our mission is to create technology solutions that improve the lives of our community — students and elderly alike.</h2>
+          <h2>Built with care. Made to be used.</h2>
+          <p class="lead">Every FAZZ project starts with a real problem someone in our community is facing.</p>
         </div>
-        <div class="feature-grid">
+
+        <div class="grid grid-3">
           <article class="card">
+            <span class="icon-tile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            </span>
             <h3>Who we are</h3>
-            <p>FAZZ is a community of student developers who believe technology can create meaningful change when it is built with care.</p>
+            <p>Student developers who think software should help real people.</p>
+            <ul class="chips">
+              <li>Volunteer-run</li>
+              <li>Nonprofit</li>
+            </ul>
           </article>
+
           <article class="card">
+            <span class="icon-tile tile-cool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6" /><path d="m8 6-6 6 6 6" /></svg>
+            </span>
             <h3>What we build</h3>
-            <p>We create practical apps and tools that help students plan and learn, and help elderly community members stay connected and confident with technology.</p>
+            <p>Planning, studying, and accessibility tools you can open today.</p>
+            <ul class="chips">
+              <li>Web apps</li>
+              <li>Study tools</li>
+            </ul>
           </article>
+
           <article class="card">
+            <span class="icon-tile tile-warm">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>
+            </span>
             <h3>Why it matters</h3>
-            <p>Every project is shaped by real student needs, thoughtful collaboration, and a commitment to positive impact.</p>
+            <p>Small tools, built well, change how a day actually goes.</p>
+            <ul class="chips">
+              <li>Free access</li>
+              <li>Real impact</li>
+            </ul>
           </article>
         </div>
       </section>
 
-      <section id="highlighted-projects" class="section section-alt">
-        <div class="container" data-animate>
-          <div class="section-heading">
+      <!-- Projects -->
+      <section id="projects" class="section container" data-animate>
+        <div class="panel">
+          <div class="section-head">
             <p class="eyebrow">Highlighted projects</p>
-            <h2>Our work centers on useful technology, clear impact, and student collaboration.</h2>
+            <h2>What we've shipped.</h2>
           </div>
           <div class="project-grid" data-project-grid data-project-limit="3"></div>
         </div>
       </section>
 
+      <!-- Audiences -->
       <section class="section container" data-animate>
-        <div class="split-grid">
-          <div>
-            <p class="eyebrow">Community outreach</p>
-            <h2>We host in-person events for the communities we build for: students and elderly community members.</h2>
-            <p>From coding workshops to tech help drop-ins, our outreach events bring FAZZ's apps and developers directly to the people who use them.</p>
-          </div>
-          <div class="card">
-            <h3>Find an event</h3>
-            <ul class="detail-list">
-              <li><a href="students.html">Student events →</a></li>
-              <li><a href="elderly.html">Elderly community events →</a></li>
+        <div class="section-head">
+          <p class="eyebrow">Who we build for</p>
+          <h2>Two communities, one goal.</h2>
+        </div>
+        <div class="grid grid-2">
+          <a class="audience-card" href="students.html">
+            <span class="icon-tile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z" /><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" /></svg>
+            </span>
+            <h3>Students</h3>
+            <p class="muted">Apps for planning, studying, and getting through the week. Plus workshops we run in person.</p>
+            <ul class="chips">
+              <li>Planners</li>
+              <li>Test prep</li>
+              <li>Workshops</li>
             </ul>
-          </div>
+            <span class="link-arrow">
+              See student tools
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </span>
+          </a>
+
+          <a class="audience-card is-cool" href="elderly.html">
+            <span class="icon-tile tile-cool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="1.7" /><path d="M4.5 8.5h15" /><path d="M12 8.5V14" /><path d="m8.8 21 3.2-7 3.2 7" /></svg>
+            </span>
+            <h3>Elderly neighbors</h3>
+            <p class="muted">Accessible tools and drop-in tech help, so staying connected never feels complicated.</p>
+            <ul class="chips">
+              <li>Accessibility</li>
+              <li>Online safety</li>
+              <li>Drop-ins</li>
+            </ul>
+            <span class="link-arrow">
+              See community events
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </span>
+          </a>
         </div>
       </section>
 
-      <section class="section section-cta container" data-animate>
+      <!-- CTA -->
+      <section class="section container" data-animate>
         <div class="callout">
           <div>
             <p class="eyebrow">Join the community</p>
-            <h2>Students who want to build useful technology are welcome here.</h2>
+            <h2>Want to build something useful?</h2>
+            <p>No experience required — just curiosity and a willingness to show up.</p>
           </div>
           <div class="callout-actions">
-            <a href="join.html" class="btn btn-primary">Apply to FAZZ</a>
-            <a href="#highlighted-projects" class="btn btn-secondary">See our projects</a>
+            <a href="join.html" class="btn btn-primary">
+              Apply to FAZZ
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
+            </a>
+            <a href="about.html" class="btn btn-secondary">Meet the team</a>
           </div>
         </div>
       </section>
@@ -151,16 +242,29 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <div>
-          <p class="footer-brand">FAZZ</p>
-          <p>Technology solutions that improve the lives of our community — students and elderly alike — built by students who want to make a meaningful difference.</p>
+        <div class="footer-brand-col">
+          <p class="footer-brand"><span class="brand-mark">✦</span>FAZZ</p>
+          <p>Future Advancements in Zero Barrier Zone — student-built technology for the people around us.</p>
         </div>
-        <div class="footer-links">
-          <a href="about.html">About</a>
-          <a href="students.html">Students</a>
-          <a href="elderly.html">Elderly</a>
-          <a href="join.html">Join</a>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="students.html">Students</a></li>
+            <li><a href="elderly.html">Elderly</a></li>
+          </ul>
         </div>
+        <div class="footer-col">
+          <h4>Get involved</h4>
+          <ul>
+            <li><a href="join.html">Apply to FAZZ</a></li>
+            <li><a href="mailto:project.Lumina.edu@gmail.com">Email us</a></li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span data-year>2026</span> FAZZ. A student-led nonprofit.</span>
+          <span>Frisco, Texas</span>
+`        </div>
       </div>
     </footer>
   </body>
