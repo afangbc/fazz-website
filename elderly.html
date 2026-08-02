@@ -8,11 +8,13 @@
       name="description"
       content="FAZZ builds accessible apps and hosts community outreach events, like tech help drop-ins and online safety workshops, to support elderly community members."
     />
-    <meta name="theme-color" content="#6d5bf7" />
+    <meta name="theme-color" content="#4b3fbb" />
+    <link rel="icon" type="image/png" href="images/fazzlogo.png" />
+    <link rel="apple-touch-icon" href="images/fazzlogo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -24,10 +26,11 @@
   <body>
     <div id="site-banner" class="site-banner"></div>
 
+    <div class="nav-scrim" data-nav-scrim></div>
+
     <header class="site-header">
-      <div class="nav-scrim" data-nav-scrim></div>
       <div class="container header-inner">
-        <a class="brand" href="index.html"><span class="brand-mark">✦</span>FAZZ</a>
+        <a class="brand" href="index.html"><img class="brand-mark" src="images/fazzlogo.png" alt="" width="32" height="32" />FAZZ</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">
           <span class="toggle-lines">
             <span class="toggle-line"></span>
@@ -47,24 +50,26 @@
     </header>
 
     <main>
-      <section class="hero-sub hero-sub-wide container" data-animate>
-        <p class="eyebrow">For elderly community members</p>
-        <h1>Technology help, from neighbors who have time.</h1>
-        <p class="lead">Accessible tools built with clarity in mind — and in-person sessions where we sit down and help.</p>
-        <ul class="hero-meta">
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-            Free of charge
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
-            Online safety guidance
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
-            Local to Frisco
-          </li>
-        </ul>
+      <section class="hero-sub hero-sub-wide">
+        <div class="container" data-animate>
+          <p class="eyebrow">For elderly community members</p>
+          <h1>Technology help, from neighbors who have time.</h1>
+          <p class="lead">Accessible tools built with clarity in mind — and in-person sessions where we sit down and help.</p>
+          <ul class="hero-meta">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+              Free of charge
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" /></svg>
+              Online safety guidance
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+              Local to Frisco
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section class="section container" data-animate>
@@ -72,7 +77,11 @@
           <p class="eyebrow">Apps</p>
           <h2>Tools built to be easy.</h2>
         </div>
-        <div class="project-grid" data-project-grid></div>
+        <div
+          class="project-grid"
+          data-project-grid="elderly"
+          data-project-empty="We're building our first accessibility tools now. In the meantime, come see us at a community session below."
+        ></div>
       </section>
 
       <section class="section container" data-animate>
@@ -106,7 +115,7 @@
     <footer class="footer">
       <div class="container footer-inner">
         <div class="footer-brand-col">
-          <p class="footer-brand"><span class="brand-mark">✦</span>FAZZ</p>
+          <p class="footer-brand"><img class="brand-mark" src="images/fazzlogo.png" alt="" width="32" height="32" />FAZZ</p>
           <p>Future Advancements in Zero Barrier Zone — student-built technology for the people around us.</p>
         </div>
         <div class="footer-col">

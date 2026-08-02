@@ -62,6 +62,15 @@ const founders = [
     image: "",
     imageAlt: ""
   },
+  
+  {
+    name: "Jonathan Shen",
+    role: "Lead App Developer",
+    category: "developer",
+    bio: "Jonathan is a junior at Reedy High School.",
+    image: "",
+    imageAlt: ""
+  },
 
   {
     name: "Krishang Babu",

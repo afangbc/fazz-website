@@ -23,12 +23,6 @@ var ICON = {
   pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>'
 };
 
-var TILE_GRADIENTS = [
-  "linear-gradient(135deg, #6d5bf7, #ec4899)",
-  "linear-gradient(135deg, #22d3ee, #6d5bf7)",
-  "linear-gradient(135deg, #ec4899, #f59e0b)"
-];
-
 /* =========================================================
    Navigation
    ========================================================= */
@@ -134,27 +128,37 @@ function emptyState(message) {
   return `<p class="empty-state">${message}</p>`;
 }
 
-function visualFor(item, label, index) {
-  var style = item.image ? "" : ` style="background: ${TILE_GRADIENTS[index % TILE_GRADIENTS.length]}"`;
+function visualFor(item, label) {
   var inner = item.image
     ? `<img src="${item.image}" alt="${item.imageAlt || label}" />`
     : label.charAt(0).toUpperCase();
-  return `<div class="project-visual"${style}>${inner}</div>`;
+  return `<div class="project-visual">${inner}</div>`;
 }
 
 function renderProjects() {
   var containers = document.querySelectorAll("[data-project-grid]");
 
   containers.forEach(function (container) {
+    // `data-project-grid="students"` (or "elderly") narrows the list to the
+    // projects that declare that audience; an empty value shows everything.
+    var audience = container.getAttribute("data-project-grid");
+    var visibleProjects = audience
+      ? projects.filter(function (project) {
+          return (project.audience || []).indexOf(audience) !== -1;
+        })
+      : projects;
+
     var limit = container.getAttribute("data-project-limit");
-    var visibleProjects = limit ? projects.slice(0, Number(limit)) : projects;
+    if (limit) visibleProjects = visibleProjects.slice(0, Number(limit));
 
     if (!visibleProjects.length) {
-      container.innerHTML = emptyState("No projects yet. Add one to the data file.");
+      container.innerHTML = emptyState(
+        container.getAttribute("data-project-empty") || "No projects yet. Add one to the data file."
+      );
       return;
     }
 
-    container.innerHTML = visibleProjects.map(function (project, index) {
+    container.innerHTML = visibleProjects.map(function (project) {
       var links = [];
       if (project.link && project.link !== "#") {
         links.push(`<a href="${project.link}" target="_blank" rel="noreferrer">View project ${ICON.external}</a>`);
@@ -165,13 +169,13 @@ function renderProjects() {
 
       return `
         <article class="project-card">
-          ${visualFor(project, project.name, index)}
+          ${visualFor(project, project.name)}
           <div class="project-body">
             <h3>${project.name}</h3>
+            <p>${project.description}</p>
             <ul class="project-tags">
               ${project.tags.map(function (tag) { return `<li>${tag}</li>`; }).join("")}
             </ul>
-            <p>${project.description}</p>
             <ul class="tech-list">
               ${project.technologies.map(function (tech) { return `<li>${tech}</li>`; }).join("")}
             </ul>
@@ -199,14 +203,14 @@ function renderEvents() {
       return;
     }
 
-    container.innerHTML = events.map(function (event, index) {
+    container.innerHTML = events.map(function (event) {
       var linkHtml = event.link
         ? `<div class="project-links"><a href="${event.link}" target="_blank" rel="noreferrer">Sign up ${ICON.arrow}</a></div>`
         : "";
 
       return `
         <article class="project-card event-card">
-          ${visualFor(event, event.title, index)}
+          ${visualFor(event, event.title)}
           <div class="project-body">
             <h3>${event.title}</h3>
             <ul class="event-meta">
@@ -236,15 +240,14 @@ function renderFounders() {
       return;
     }
 
-    container.innerHTML = visibleFounders.map(function (founder, index) {
+    container.innerHTML = visibleFounders.map(function (founder) {
       var avatarHtml = founder.image
         ? `<img src="${founder.image}" alt="${founder.imageAlt || founder.name}" />`
         : founder.name.charAt(0).toUpperCase();
-      var avatarStyle = founder.image ? "" : ` style="background: ${TILE_GRADIENTS[index % TILE_GRADIENTS.length]}"`;
 
       return `
         <article class="card founder-card">
-          <div class="founder-avatar"${avatarStyle}>${avatarHtml}</div>
+          <div class="founder-avatar">${avatarHtml}</div>
           <h3>${founder.name}</h3>
           <span class="founder-role">${founder.role}</span>
           <p>${founder.bio}</p>

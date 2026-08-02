@@ -3,16 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAZZ</title>
+    <title>FAZZ | Future Advancements in Zero Barrier Zone</title>
     <meta
       name="description"
       content="FAZZ (Future Advancements in Zero Barrier Zone) is a student-led nonprofit building technology solutions that improve the lives of our community, students and elderly alike, from planning tools to accessible resources."
     />
-    <meta name="theme-color" content="#6d5bf7" />
+    <meta name="theme-color" content="#4b3fbb" />
+    <link rel="icon" type="image/png" href="images/fazzlogo.png" />
+    <link rel="apple-touch-icon" href="images/fazzlogo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -24,10 +26,11 @@
   <body>
     <div id="site-banner" class="site-banner"></div>
 
+    <div class="nav-scrim" data-nav-scrim></div>
+
     <header class="site-header">
-      <div class="nav-scrim" data-nav-scrim></div>
       <div class="container header-inner">
-        <a class="brand" href="index.html"><span class="brand-mark">✦</span>FAZZ</a>
+        <a class="brand" href="index.html"><img class="brand-mark" src="images/fazzlogo.png" alt="" width="32" height="32" />FAZZ</a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">
           <span class="toggle-lines">
             <span class="toggle-line"></span>
@@ -80,10 +83,6 @@
           </div>
 
           <div class="hero-visual">
-            <span class="float-chip float-chip-a">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z" /></svg>
-              Built by students
-            </span>
             <div class="app-mock">
               <div class="app-mock-header">
                 <div class="app-mock-dots">
@@ -107,10 +106,6 @@
                 <span class="app-mock-task-text"><strong>Study group @ 4pm</strong><span>Calculus · Library</span></span>
               </div>
             </div>
-            <span class="float-chip float-chip-b">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z" /></svg>
-              Free forever
-            </span>
           </div>
         </div>
       </section>
@@ -202,7 +197,7 @@
             </span>
           </a>
 
-          <a class="audience-card is-cool" href="elderly.html">
+          <a class="audience-card" href="elderly.html">
             <span class="icon-tile tile-cool">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="1.7" /><path d="M4.5 8.5h15" /><path d="M12 8.5V14" /><path d="m8.8 21 3.2-7 3.2 7" /></svg>
             </span>
@@ -243,7 +238,7 @@
     <footer class="footer">
       <div class="container footer-inner">
         <div class="footer-brand-col">
-          <p class="footer-brand"><span class="brand-mark">✦</span>FAZZ</p>
+          <p class="footer-brand"><img class="brand-mark" src="images/fazzlogo.png" alt="" width="32" height="32" />FAZZ</p>
           <p>Future Advancements in Zero Barrier Zone — student-built technology for the people around us.</p>
         </div>
         <div class="footer-col">
@@ -264,7 +259,7 @@
         <div class="footer-bottom">
           <span>© <span data-year>2026</span> FAZZ. A student-led nonprofit.</span>
           <span>Frisco, Texas</span>
-`        </div>
+        </div>
       </div>
     </footer>
   </body>
