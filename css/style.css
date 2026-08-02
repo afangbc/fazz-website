@@ -5,29 +5,43 @@
 :root {
   color-scheme: light;
 
-  /* Brand — drawn from the logo, deepened for print-like contrast */
-  --brand: #4b3fbb;
-  --brand-dark: #362c8f;
-  --brand-tint: #f2f1fb;
-  --brand-tint-strong: #e4e1f7;
-  --accent: #b32d80;
-  --accent-tint: #fbeef6;
+  /* Brand palette */
+  --violet: #6d5bf7;
+  --violet-dark: #4f3adb;
+  --pink: #ec4899;
+  --cyan: #22d3ee;
+  --amber: #f59e0b;
 
-  /* Neutrals */
+  /* Gradients — used for fills and display numerals, never for body text */
+  --grad: linear-gradient(120deg, var(--violet), var(--pink));
+  --grad-cool: linear-gradient(120deg, var(--cyan), var(--violet));
+  --grad-warm: linear-gradient(120deg, var(--pink), var(--amber));
+
+  /* Brand roles. --brand is the deeper violet so small text stays legible
+     on white; the gradients carry the colour on larger fills. */
+  --brand: #4f3adb;
+  --brand-dark: #3d2bb8;
+  --brand-tint: #f1effd;
+  --brand-tint-strong: #ded9fb;
+  --accent: #d42d84;
+  --accent-tint: #fdeef6;
+
+  /* Neutrals — very slightly violet-tinted so they sit with the brand */
   --bg: #ffffff;
   --surface: #ffffff;
-  --surface-2: #f7f8fb;
-  --surface-3: #eef0f5;
-  --ink: #171a26;
-  --ink-2: #3c4155;
-  --muted: #616779;
-  --line: #e3e5ed;
-  --line-strong: #c9cdda;
+  --surface-2: #f8f7fd;
+  --surface-3: #edeafa;
+  --ink: #16172b;
+  --ink-2: #3d4058;
+  --muted: #61657e;
+  --line: #e6e4f2;
+  --line-strong: #ccc8e2;
 
   /* Elevation — restrained; borders do most of the work */
-  --sh-sm: 0 1px 2px rgba(23, 26, 38, 0.05);
-  --sh-md: 0 1px 3px rgba(23, 26, 38, 0.07), 0 1px 2px rgba(23, 26, 38, 0.04);
-  --sh-lg: 0 8px 24px rgba(23, 26, 38, 0.08);
+  --sh-sm: 0 1px 2px rgba(22, 23, 43, 0.05);
+  --sh-md: 0 1px 3px rgba(22, 23, 43, 0.07), 0 1px 2px rgba(22, 23, 43, 0.04);
+  --sh-lg: 0 8px 24px rgba(22, 23, 43, 0.09);
+  --sh-brand: 0 6px 18px rgba(109, 91, 247, 0.28);
 
   /* Shape */
   --r-2xl: 14px;
@@ -170,9 +184,12 @@ p {
   color: var(--brand);
 }
 
-/* Kept as a hook for the one or two words that carry brand emphasis */
+/* The one or two words per page that carry brand emphasis */
 .gradient-text {
-  color: var(--brand);
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* =========================================================
@@ -192,8 +209,8 @@ p {
   font-size: 0.94rem;
   line-height: 1.2;
   white-space: nowrap;
-  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease,
-    box-shadow 0.18s ease;
+  transition: background-color 0.22s ease, background-position 0.28s ease,
+    border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
 }
 
 .btn svg {
@@ -208,12 +225,15 @@ p {
 }
 
 .btn-primary {
-  background: var(--brand);
+  background: var(--grad);
+  background-size: 150% 150%;
   color: #fff;
+  box-shadow: var(--sh-brand);
 }
 
 .btn-primary:hover {
-  background: var(--brand-dark);
+  background-position: 100% 0;
+  box-shadow: 0 8px 22px rgba(109, 91, 247, 0.36);
 }
 
 .btn-secondary {
@@ -265,7 +285,7 @@ p {
   display: block;
   position: relative;
   z-index: var(--z-banner);
-  background: var(--brand-dark);
+  background: var(--grad);
   color: #fff;
 }
 
@@ -539,9 +559,9 @@ p {
   height: 42px;
   margin-bottom: 1.15rem;
   border-radius: var(--r-md);
-  color: var(--brand);
-  background: var(--brand-tint);
-  border: 1px solid var(--brand-tint-strong);
+  color: #fff;
+  background: var(--grad);
+  box-shadow: 0 5px 14px rgba(109, 91, 247, 0.24);
 }
 
 .icon-tile svg {
@@ -550,15 +570,13 @@ p {
 }
 
 .tile-cool {
-  color: var(--ink-2);
-  background: var(--surface-3);
-  border-color: var(--line-strong);
+  background: var(--grad-cool);
+  box-shadow: 0 5px 14px rgba(34, 211, 238, 0.26);
 }
 
 .tile-warm {
-  color: var(--accent);
-  background: var(--accent-tint);
-  border-color: #f2dbe9;
+  background: var(--grad-warm);
+  box-shadow: 0 5px 14px rgba(236, 72, 153, 0.24);
 }
 
 /* Chip rows */
@@ -584,9 +602,14 @@ p {
    Hero
    ========================================================= */
 
+/* A violet-to-pink wash, kept inside the hero band rather than washing the
+   whole page the way the old fixed aurora did. */
 .hero {
   padding: 4rem 0 4.25rem;
-  background: var(--surface-2);
+  background:
+    radial-gradient(760px 380px at 8% -10%, rgba(109, 91, 247, 0.18), transparent 64%),
+    radial-gradient(660px 340px at 92% 4%, rgba(236, 72, 153, 0.13), transparent 62%),
+    var(--surface-2);
   border-bottom: 1px solid var(--line);
 }
 
@@ -695,7 +718,7 @@ p {
   display: block;
   height: 100%;
   width: 68%;
-  background: var(--brand);
+  background: var(--grad);
 }
 
 .app-mock-task {
@@ -722,7 +745,7 @@ p {
 }
 
 .app-mock-check.done {
-  background: var(--brand);
+  background: var(--grad);
 }
 
 .app-mock-check.pending {
@@ -752,7 +775,10 @@ p {
 
 .hero-sub {
   padding: 3.5rem 0;
-  background: var(--surface-2);
+  background:
+    radial-gradient(700px 320px at 6% -20%, rgba(109, 91, 247, 0.16), transparent 64%),
+    radial-gradient(560px 280px at 94% 0%, rgba(236, 72, 153, 0.11), transparent 62%),
+    var(--surface-2);
   border-bottom: 1px solid var(--line);
 }
 
@@ -801,7 +827,22 @@ p {
   font-weight: 700;
   font-size: clamp(1.85rem, 3vw, 2.3rem);
   line-height: 1.15;
-  color: var(--brand);
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-item:nth-child(2) .stat-value {
+  background: var(--grad-cool);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.stat-item:nth-child(3) .stat-value {
+  background: var(--grad-warm);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .stat-label {
@@ -872,6 +913,8 @@ p {
   box-shadow: var(--sh-md);
 }
 
+/* The gradient is the fallback tile for projects with no image; when an image
+   is present it covers the box completely and hides the gradient. */
 .project-visual {
   position: relative;
   height: 150px;
@@ -880,10 +923,18 @@ p {
   border-bottom: 1px solid var(--line);
   font-family: "Source Serif 4", Georgia, serif;
   font-weight: 700;
-  font-size: 2.2rem;
-  color: var(--brand);
-  background: var(--surface-2);
+  font-size: 2.4rem;
+  color: #fff;
+  background: var(--grad);
   overflow: hidden;
+}
+
+.project-card:nth-child(3n + 2) .project-visual {
+  background: var(--grad-cool);
+}
+
+.project-card:nth-child(3n + 3) .project-visual {
+  background: var(--grad-warm);
 }
 
 .project-visual img {
@@ -1049,12 +1100,20 @@ p {
   height: 68px;
   margin-bottom: 0.9rem;
   border-radius: 50%;
-  color: var(--brand);
-  background: var(--brand-tint);
+  color: #fff;
+  background: var(--grad);
   font-family: "Source Serif 4", Georgia, serif;
   font-weight: 700;
   font-size: 1.45rem;
   overflow: hidden;
+}
+
+.founder-card:nth-child(3n + 2) .founder-avatar {
+  background: var(--grad-cool);
+}
+
+.founder-card:nth-child(3n + 3) .founder-avatar {
+  background: var(--grad-warm);
 }
 
 .founder-avatar img {
@@ -1088,13 +1147,23 @@ p {
    ========================================================= */
 
 .quote-card {
+  position: relative;
   align-self: center;
   margin: 0;
   padding: 2rem 2.25rem;
-  background: var(--surface-2);
+  background: linear-gradient(135deg, rgba(109, 91, 247, 0.09), rgba(236, 72, 153, 0.07));
   border: 1px solid var(--line);
-  border-left: 3px solid var(--brand);
   border-radius: 0 var(--r-lg) var(--r-lg) 0;
+}
+
+.quote-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--grad);
 }
 
 .quote-card p {
@@ -1147,9 +1216,8 @@ p {
   border-radius: 50%;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--brand);
-  background: var(--brand-tint);
-  border: 1px solid var(--brand-tint-strong);
+  color: #fff;
+  background: var(--grad);
 }
 
 .step strong {
@@ -1175,8 +1243,9 @@ p {
   gap: 2rem;
   padding: 2.75rem 3rem;
   border-radius: var(--r-2xl);
-  background: var(--brand-dark);
+  background: linear-gradient(125deg, #5c48ec 0%, #8b5cf6 45%, #ec4899 100%);
   color: #fff;
+  box-shadow: 0 14px 38px rgba(109, 91, 247, 0.26);
 }
 
 .callout h2 {
@@ -1201,7 +1270,8 @@ p {
 
 .callout .btn-primary {
   background: #fff;
-  color: var(--brand-dark);
+  color: var(--brand);
+  box-shadow: 0 6px 18px rgba(22, 23, 43, 0.18);
 }
 
 .callout .btn-primary:hover {
