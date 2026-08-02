@@ -19,12 +19,8 @@
 
   /* Brand roles. --brand is the deeper violet so small text stays legible
      on white; the gradients carry the colour on larger fills. */
-  --brand: #4f3adb;
-  --brand-dark: #3d2bb8;
+  --brand: var(--violet-dark);
   --brand-tint: #f1effd;
-  --brand-tint-strong: #ded9fb;
-  --accent: #d42d84;
-  --accent-tint: #fdeef6;
 
   /* Neutrals — very slightly violet-tinted so they sit with the brand */
   --bg: #ffffff;
