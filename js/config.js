@@ -4,8 +4,8 @@ const JOIN_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfR89B9IfgpTcB3I
 // SITE-WIDE ANNOUNCEMENT BANNER — edit this to change/disable the banner on every page
 const BANNER_CONFIG = {
   enabled: true,
-  text: "Join our BPA & DECA Workshop!",
-  linkText: "Sign up",
-  linkUrl: "https://docs.google.com/forms/d/e/1FAIpQLSepmuspYK9iAg60k5g135sGK8n-RJ2ywWvntxYmGgeUTmS3aw/viewform?usp=publish-editor",
+  text: "Check out our latest creation: ClubHub!",
+  linkText: "Link",
+  linkUrl: "https://club-hub-self.vercel.app",
   dismissible: true,
 };

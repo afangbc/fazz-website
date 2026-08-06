@@ -35,7 +35,7 @@ const projects = [
     description: "A next-generation, all-in-one planning app meant for students. Easily track tasks and events through a seamless interface.",
     audience: ["students"],
     image: "images/daybook_screenshot.png",
-    imageAlt: "Daybook Planner logo",
+    imageAlt: "Daybook Planner Screenshot",
     tags: ["Meant for Students", "Productivity", "Website"],
     technologies: ["Full Stack", "JavaScript"],
     link: "https://daybook-adv.lovable.app/",
@@ -44,10 +44,10 @@ const projects = [
   {
     name: "One-Key Classics",
     description: "Learn piano through an interactive, web-based experience by playing your favorite classical hits!",
-    audience: ["students"],
+    audience: ["students", "elderly"],
     tags: ["Education", "Music", "Web App"],
     image: "images/okw-screenshot.png",
-    imageAlt: "One-Key Classics interface showing an interactive piano keyboard",
+    imageAlt: "One-Key Classics Screenshot",
     technologies: ["HTML", "CSS", "JavaScript"],
     link: "https://one-key-classics.vercel.app/",
     github: "#"
@@ -57,8 +57,10 @@ const projects = [
     description: "A club organization app for school teachers, students, and administrators",
     audience: ["students"],
     tags: ["School", "Management", "Clubs"],
+    image: "images/club_hub_screenshot.png",
+    imageAlt: "Club Hub Screenshot",
     technologies: ["HTML", "JavaScript"],
-    link: "#",
-    github: "#"
+    link: "https://club-hub-self.vercel.app/",
+    github: "https://github.com/afangbc/Club-Hub"
   }
 ];

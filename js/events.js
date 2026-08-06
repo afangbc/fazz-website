@@ -24,7 +24,7 @@ const studentEvents = [
     location: "Frisco Public Library Meeting Room 1, or on Zoom",
     description: "ICDC and BPA NLC finalists and winners explain their tactics to place high at International business competitions! Sign up today",
     image: "",
-    imageAlt: "",
+    imageAlt: "BPA/DECA Workshop Event",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSepmuspYK9iAg60k5g135sGK8n-RJ2ywWvntxYmGgeUTmS3aw/viewform?usp=publish-editor"
   },
   
