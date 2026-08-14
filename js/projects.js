@@ -53,14 +53,14 @@ const projects = [
     github: "#"
   },
   {
-    name: "ClubHub",
+    name: "ClubBase",
     description: "A club organization app for school teachers, students, and administrators",
     audience: ["students"],
     tags: ["School", "Management", "Clubs"],
     image: "images/club_hub_screenshot.png",
-    imageAlt: "Club Hub Screenshot",
+    imageAlt: "ClubBase Screenshot",
     technologies: ["HTML", "JavaScript"],
-    link: "https://club-hub-self.vercel.app/",
+    link: "https://club-base.app/",
     github: "https://github.com/afangbc/Club-Hub"
   },
   {
@@ -68,7 +68,7 @@ const projects = [
     description: "An app to help students prepare for the SAT exam, with error DNA, Bluebook test reviews, and a full course for content.",
     audience: ["students"],
     tags: ["School", "SAT", "Course"],
-    image: "images/club_hub_screenshot.png",
+    image: "images/sat_prep.png",
     imageAlt: "SAT Prep Screenshot",
     technologies: ["HTML", "JavaScript"],
     link: "https://sat-app-flame.vercel.app/",
