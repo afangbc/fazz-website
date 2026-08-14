@@ -62,5 +62,16 @@ const projects = [
     technologies: ["HTML", "JavaScript"],
     link: "https://club-hub-self.vercel.app/",
     github: "https://github.com/afangbc/Club-Hub"
+  },
+  {
+    name: "SAT Prep",
+    description: "An app to help students prepare for the SAT exam, with error DNA, Bluebook test reviews, and a full course for content.",
+    audience: ["students"],
+    tags: ["School", "SAT", "Course"],
+    image: "images/club_hub_screenshot.png",
+    imageAlt: "SAT Prep Screenshot",
+    technologies: ["HTML", "JavaScript"],
+    link: "https://sat-app-flame.vercel.app/",
+    github: "#"
   }
 ];
