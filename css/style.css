@@ -5,46 +5,57 @@
 :root {
   color-scheme: light;
 
-  /* Brand palette */
-  --violet: #6d5bf7;
-  --violet-dark: #4f3adb;
-  --pink: #ec4899;
-  --cyan: #22d3ee;
-  --amber: #f59e0b;
+  /* Brand palette — a single dark-violet ramp. One hue, no secondary
+     accent colour: the whole system is violet, white, and neutral grey. */
+  --violet-900: #2e1065;
+  --violet-800: #3b1578;
+  --violet-700: #4c1d95;
+  --violet-600: #5b21b6;
+  --violet-500: #6d28d9;
+  --violet-200: #ddd6fe;
+  --violet-100: #ede9fe;
+  --violet-50: #f5f3ff;
 
-  /* Gradients — used for fills and display numerals, never for body text */
-  --grad: linear-gradient(120deg, var(--violet), var(--pink));
-  --grad-cool: linear-gradient(120deg, var(--cyan), var(--violet));
-  --grad-warm: linear-gradient(120deg, var(--pink), var(--amber));
+  /* Brand roles. --brand is dark enough (≈10:1 on white) that it can carry
+     small text, links, and icons — not just large fills. */
+  --brand: var(--violet-700);
+  --brand-strong: var(--violet-900);
+  --brand-soft: var(--violet-500);
+  --brand-tint: var(--violet-50);
+  --brand-tint-2: var(--violet-100);
+  --brand-line: var(--violet-200);
 
-  /* Brand roles. --brand is the deeper violet so small text stays legible
-     on white; the gradients carry the colour on larger fills. */
-  --brand: var(--violet-dark);
-  --brand-tint: #f1effd;
+  /* Back-compat aliases. The old design filled shapes with three gradients;
+     they are now flat tones of the one violet, so any rule still asking for
+     --grad gets a solid fill rather than a stale gradient. */
+  --grad: var(--violet-700);
+  --grad-cool: var(--violet-600);
+  --grad-warm: var(--violet-500);
 
-  /* Neutrals — very slightly violet-tinted so they sit with the brand */
+  /* Neutrals — a hint of violet in the greys, nothing more */
   --bg: #ffffff;
   --surface: #ffffff;
-  --surface-2: #f8f7fd;
-  --surface-3: #edeafa;
-  --ink: #16172b;
-  --ink-2: #3d4058;
-  --muted: #61657e;
-  --line: #e6e4f2;
-  --line-strong: #ccc8e2;
+  --surface-2: #fafafc;
+  --surface-3: #f2f1f6;
+  --ink: #1a1523;
+  --ink-2: #3a3548;
+  --muted: #5c5670;
+  --line: #e4e2ea;
+  --line-strong: #c9c5d4;
 
-  /* Elevation — restrained; borders do most of the work */
-  --sh-sm: 0 1px 2px rgba(22, 23, 43, 0.05);
-  --sh-md: 0 1px 3px rgba(22, 23, 43, 0.07), 0 1px 2px rgba(22, 23, 43, 0.04);
-  --sh-lg: 0 8px 24px rgba(22, 23, 43, 0.09);
-  --sh-brand: 0 6px 18px rgba(109, 91, 247, 0.28);
+  /* Elevation — Swiss-style: rules, not shadows. Only genuinely floating
+     UI (the mobile nav panel) is allowed to cast one. */
+  --sh-sm: none;
+  --sh-md: none;
+  --sh-lg: 0 2px 8px rgba(26, 21, 35, 0.09);
 
-  /* Shape */
-  --r-2xl: 14px;
-  --r-xl: 12px;
-  --r-lg: 10px;
-  --r-md: 8px;
-  --r-sm: 6px;
+  /* Shape — near-square. Small radii read as considered; large ones read
+     as consumer-app modern, which is what we are moving away from. */
+  --r-2xl: 4px;
+  --r-xl: 3px;
+  --r-lg: 3px;
+  --r-md: 2px;
+  --r-sm: 2px;
   --pill: 999px;
 
   /* Layering — every z-index in the site comes from here */
@@ -139,7 +150,9 @@ h4 {
 h1,
 h2 {
   font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
-  letter-spacing: -0.012em;
+  /* Near-zero tracking. Tight negative tracking is a contemporary-startup
+     tell; classic settings read more established. */
+  letter-spacing: -0.003em;
 }
 
 h1 {
@@ -152,8 +165,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1.08rem;
-  letter-spacing: -0.005em;
+  font-size: 1.05rem;
+  letter-spacing: 0;
 }
 
 p {
@@ -180,12 +193,10 @@ p {
   color: var(--brand);
 }
 
-/* The one or two words per page that carry brand emphasis */
+/* The one or two words per page that carry brand emphasis. Kept as a class
+   so the markup is unchanged, but it is now a flat colour, not a gradient. */
 .gradient-text {
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand);
 }
 
 /* =========================================================
@@ -221,15 +232,12 @@ p {
 }
 
 .btn-primary {
-  background: var(--grad);
-  background-size: 150% 150%;
+  background: var(--brand);
   color: #fff;
-  box-shadow: var(--sh-brand);
 }
 
 .btn-primary:hover {
-  background-position: 100% 0;
-  box-shadow: 0 8px 22px rgba(109, 91, 247, 0.36);
+  background: var(--brand-strong);
 }
 
 .btn-secondary {
@@ -239,8 +247,9 @@ p {
 }
 
 .btn-secondary:hover {
-  background: var(--surface-2);
-  border-color: var(--muted);
+  background: var(--brand-tint);
+  border-color: var(--brand);
+  color: var(--brand);
 }
 
 .btn-sm {
@@ -281,7 +290,7 @@ p {
   display: block;
   position: relative;
   z-index: var(--z-banner);
-  background: var(--grad);
+  background: var(--brand-strong);
   color: #fff;
 }
 
@@ -362,8 +371,10 @@ p {
   transition: box-shadow 0.2s ease;
 }
 
+/* A hairline rather than a shadow — the header separates by rule, like
+   the rest of the page. */
 .site-header.is-stuck {
-  box-shadow: 0 1px 3px rgba(23, 26, 38, 0.08);
+  border-bottom-color: var(--line-strong);
 }
 
 .header-inner {
@@ -386,11 +397,14 @@ p {
   color: var(--ink);
 }
 
+/* The mark is a square violet tile, so it takes the same near-square
+   radius as the rest of the system — a 50% crop would round its corners
+   off and turn it back into a circle. */
 .brand-mark {
   width: 32px;
   height: 32px;
   flex: none;
-  border-radius: 50%;
+  border-radius: var(--r-sm);
 }
 
 .site-nav {
@@ -414,9 +428,20 @@ p {
   background: var(--surface-2);
 }
 
+/* The active page is marked by a rule under the label, not a pill. */
 .nav-link.active {
   color: var(--brand);
   font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  bottom: 0.15rem;
+  height: 2px;
+  background: var(--brand);
 }
 
 .nav-cta {
@@ -475,16 +500,16 @@ p {
    ========================================================= */
 
 .section {
-  padding: 3.25rem 0;
+  padding: 4.5rem 0;
 }
 
 .section-sm {
-  padding: 2.25rem 0;
+  padding: 3rem 0;
 }
 
 .section-head {
-  max-width: 660px;
-  margin-bottom: 2.5rem;
+  max-width: 640px;
+  margin-bottom: 3rem;
 }
 
 .section-head h2 {
@@ -493,7 +518,7 @@ p {
 
 .grid {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .grid-2 {
@@ -507,7 +532,7 @@ p {
 /* Tinted panel that groups a whole section */
 
 .panel {
-  padding: 3rem 2.5rem;
+  padding: 3.25rem 2.75rem;
   background: var(--surface-2);
   border: 1px solid var(--line);
   border-radius: var(--r-2xl);
@@ -528,8 +553,7 @@ p {
 }
 
 .card:hover {
-  border-color: var(--line-strong);
-  box-shadow: var(--sh-md);
+  border-color: var(--brand);
 }
 
 .card h3 {
@@ -543,36 +567,36 @@ p {
 
 .card-static:hover {
   border-color: var(--line);
-  box-shadow: var(--sh-sm);
 }
 
 /* Icon tiles */
 
+/* A bordered violet-tinted square with a violet glyph. The old tiles were
+   three saturated gradients; one quiet treatment reads as a system. */
 .icon-tile {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   margin-bottom: 1.15rem;
+  border: 1px solid var(--brand-line);
   border-radius: var(--r-md);
-  color: #fff;
-  background: var(--grad);
-  box-shadow: 0 5px 14px rgba(109, 91, 247, 0.24);
+  color: var(--brand);
+  background: var(--brand-tint);
 }
 
 .icon-tile svg {
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
 }
 
-.tile-cool {
-  background: var(--grad-cool);
-  box-shadow: 0 5px 14px rgba(34, 211, 238, 0.26);
-}
-
+/* Retained so existing markup keeps working; the palette is now one hue,
+   so the "cool" and "warm" variants are deliberately identical. */
+.tile-cool,
 .tile-warm {
-  background: var(--grad-warm);
-  box-shadow: 0 5px 14px rgba(236, 72, 153, 0.24);
+  border-color: var(--brand-line);
+  color: var(--brand);
+  background: var(--brand-tint);
 }
 
 /* Chip rows */
@@ -598,14 +622,12 @@ p {
    Hero
    ========================================================= */
 
-/* A violet-to-pink wash, kept inside the hero band rather than washing the
-   whole page the way the old fixed aurora did. */
+/* No wash. The hero is plain white, bounded by rules — a violet rule on top
+   to signal the brand, a hairline underneath to close the band. */
 .hero {
-  padding: 4rem 0 4.25rem;
-  background:
-    radial-gradient(760px 380px at 8% -10%, rgba(109, 91, 247, 0.18), transparent 64%),
-    radial-gradient(660px 340px at 92% 4%, rgba(236, 72, 153, 0.13), transparent 62%),
-    var(--surface-2);
+  padding: 5rem 0 5.25rem;
+  background: var(--bg);
+  border-top: 3px solid var(--brand);
   border-bottom: 1px solid var(--line);
 }
 
@@ -613,7 +635,7 @@ p {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 3.5rem;
+  gap: 4rem;
 }
 
 .hero-copy h1 {
@@ -670,7 +692,6 @@ p {
   background: var(--surface);
   border: 1px solid var(--line-strong);
   border-radius: var(--r-xl);
-  box-shadow: var(--sh-lg);
 }
 
 .app-mock-header {
@@ -705,7 +726,7 @@ p {
 .app-mock-progress {
   height: 6px;
   margin-bottom: 1.25rem;
-  border-radius: var(--pill);
+  border-radius: var(--r-sm);
   background: var(--surface-3);
   overflow: hidden;
 }
@@ -714,7 +735,7 @@ p {
   display: block;
   height: 100%;
   width: 68%;
-  background: var(--grad);
+  background: var(--brand);
 }
 
 .app-mock-task {
@@ -735,13 +756,13 @@ p {
   width: 20px;
   height: 20px;
   flex: none;
-  border-radius: 4px;
+  border-radius: var(--r-sm);
   font-size: 0.7rem;
   color: #fff;
 }
 
 .app-mock-check.done {
-  background: var(--grad);
+  background: var(--brand);
 }
 
 .app-mock-check.pending {
@@ -770,11 +791,9 @@ p {
 /* Subpage hero */
 
 .hero-sub {
-  padding: 3.5rem 0;
-  background:
-    radial-gradient(700px 320px at 6% -20%, rgba(109, 91, 247, 0.16), transparent 64%),
-    radial-gradient(560px 280px at 94% 0%, rgba(236, 72, 153, 0.11), transparent 62%),
-    var(--surface-2);
+  padding: 4.25rem 0;
+  background: var(--bg);
+  border-top: 3px solid var(--brand);
   border-bottom: 1px solid var(--line);
 }
 
@@ -804,7 +823,6 @@ p {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--r-xl);
-  box-shadow: var(--sh-sm);
   overflow: hidden;
 }
 
@@ -823,22 +841,9 @@ p {
   font-weight: 700;
   font-size: clamp(1.85rem, 3vw, 2.3rem);
   line-height: 1.15;
-  background: var(--grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.stat-item:nth-child(2) .stat-value {
-  background: var(--grad-cool);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
-.stat-item:nth-child(3) .stat-value {
-  background: var(--grad-warm);
-  -webkit-background-clip: text;
-  background-clip: text;
+  /* Every numeral the same violet — a set of figures should read as one
+     series, not three unrelated highlights. */
+  color: var(--brand);
 }
 
 .stat-label {
@@ -866,8 +871,7 @@ p {
 }
 
 .audience-card:hover {
-  border-color: var(--line-strong);
-  box-shadow: var(--sh-md);
+  border-color: var(--brand);
 }
 
 .audience-card h3 {
@@ -890,7 +894,7 @@ p {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .project-card {
@@ -905,12 +909,11 @@ p {
 }
 
 .project-card:hover {
-  border-color: var(--line-strong);
-  box-shadow: var(--sh-md);
+  border-color: var(--brand);
 }
 
-/* The gradient is the fallback tile for projects with no image; when an image
-   is present it covers the box completely and hides the gradient. */
+/* Flat violet is the fallback tile for projects with no image; when an image
+   is present it covers the box completely and hides the fill. */
 .project-visual {
   position: relative;
   height: 150px;
@@ -921,16 +924,18 @@ p {
   font-weight: 700;
   font-size: 2.4rem;
   color: #fff;
-  background: var(--grad);
+  background: var(--violet-700);
   overflow: hidden;
 }
 
+/* Three steps of the one violet, so a row of image-less cards still has
+   rhythm without introducing a second hue. */
 .project-card:nth-child(3n + 2) .project-visual {
-  background: var(--grad-cool);
+  background: var(--violet-600);
 }
 
 .project-card:nth-child(3n + 3) .project-visual {
-  background: var(--grad-warm);
+  background: var(--violet-500);
 }
 
 .project-visual img {
@@ -971,6 +976,7 @@ p {
   letter-spacing: 0.02em;
   color: var(--brand);
   background: var(--brand-tint);
+  border: 1px solid var(--brand-line);
   border-radius: var(--r-sm);
 }
 
@@ -1096,20 +1102,13 @@ p {
   height: 68px;
   margin-bottom: 0.9rem;
   border-radius: 50%;
-  color: #fff;
-  background: var(--grad);
+  border: 1px solid var(--brand-line);
+  color: var(--brand);
+  background: var(--brand-tint);
   font-family: "Source Serif 4", Georgia, serif;
   font-weight: 700;
   font-size: 1.45rem;
   overflow: hidden;
-}
-
-.founder-card:nth-child(3n + 2) .founder-avatar {
-  background: var(--grad-cool);
-}
-
-.founder-card:nth-child(3n + 3) .founder-avatar {
-  background: var(--grad-warm);
 }
 
 .founder-avatar img {
@@ -1142,24 +1141,16 @@ p {
    Quote
    ========================================================= */
 
+/* A pull-quote set off by a violet rule rather than a tinted panel. */
 .quote-card {
   position: relative;
   align-self: center;
   margin: 0;
-  padding: 2rem 2.25rem;
-  background: linear-gradient(135deg, rgba(109, 91, 247, 0.09), rgba(236, 72, 153, 0.07));
-  border: 1px solid var(--line);
-  border-radius: 0 var(--r-lg) var(--r-lg) 0;
-}
-
-.quote-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--grad);
+  padding: 1.75rem 2.25rem;
+  background: var(--bg);
+  border: 0;
+  border-left: 3px solid var(--brand);
+  border-radius: 0;
 }
 
 .quote-card p {
@@ -1209,11 +1200,11 @@ p {
   width: 26px;
   height: 26px;
   flex: none;
-  border-radius: 50%;
+  border-radius: var(--r-sm);
   font-size: 0.8rem;
   font-weight: 700;
   color: #fff;
-  background: var(--grad);
+  background: var(--brand);
 }
 
 .step strong {
@@ -1237,11 +1228,10 @@ p {
   grid-template-columns: 1.3fr 0.7fr;
   align-items: center;
   gap: 2rem;
-  padding: 2.75rem 3rem;
+  padding: 3rem 3rem;
   border-radius: var(--r-2xl);
-  background: linear-gradient(125deg, #5c48ec 0%, #8b5cf6 45%, #ec4899 100%);
+  background: var(--brand-strong);
   color: #fff;
-  box-shadow: 0 14px 38px rgba(109, 91, 247, 0.26);
 }
 
 .callout h2 {
@@ -1250,11 +1240,11 @@ p {
 }
 
 .callout p {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .callout .eyebrow {
-  color: rgba(255, 255, 255, 0.66);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .callout-actions {
@@ -1266,12 +1256,11 @@ p {
 
 .callout .btn-primary {
   background: #fff;
-  color: var(--brand);
-  box-shadow: 0 6px 18px rgba(22, 23, 43, 0.18);
+  color: var(--brand-strong);
 }
 
 .callout .btn-primary:hover {
-  background: var(--brand-tint);
+  background: var(--brand-tint-2);
 }
 
 .callout .btn-secondary {
@@ -1282,7 +1271,8 @@ p {
 
 .callout .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.7);
+  border-color: #fff;
+  color: #fff;
 }
 
 /* =========================================================
@@ -1290,10 +1280,10 @@ p {
    ========================================================= */
 
 .footer {
-  margin-top: 1rem;
-  padding: 3.25rem 0 2.5rem;
+  margin-top: 0;
+  padding: 3.75rem 0 2.5rem;
   background: var(--surface-2);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-strong);
 }
 
 .footer-inner {
@@ -1402,10 +1392,12 @@ p {
    Scroll reveal
    ========================================================= */
 
+/* Subtle tier: short distance, short duration. Motion confirms that content
+   arrived; it is not the point of the page. */
 [data-animate] {
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
 }
 
 [data-animate].in-view {
@@ -1419,16 +1411,20 @@ p {
 
 @media (max-width: 940px) {
   .section {
-    padding: 2.75rem 0;
+    padding: 3.5rem 0;
   }
 
   .hero {
-    padding: 3rem 0 3.25rem;
+    padding: 3.5rem 0 3.75rem;
+  }
+
+  .hero-sub {
+    padding: 3.25rem 0;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 3rem;
   }
 
   .hero-visual {
@@ -1448,12 +1444,12 @@ p {
   }
 
   .panel {
-    padding: 2rem 1.5rem;
+    padding: 2.25rem 1.75rem;
   }
 
   .callout {
     grid-template-columns: 1fr;
-    padding: 2.25rem;
+    padding: 2.5rem;
   }
 
   .callout-actions {
@@ -1539,7 +1535,7 @@ p {
     position: fixed;
     inset: 0;
     z-index: var(--z-scrim);
-    background: rgba(23, 26, 38, 0.3);
+    background: rgba(26, 21, 35, 0.32);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease;
@@ -1594,7 +1590,10 @@ p {
     padding: 1.5rem;
   }
 
-  .quote-card,
+  .quote-card {
+    padding: 1.25rem 1.5rem;
+  }
+
   .apply-card {
     padding: 1.65rem 1.75rem;
   }
